@@ -7,8 +7,8 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "AndreeaNameday2022.dll": "sha256-ysB4dW4Q+N+r99bsNqrL\/qSRKb9dRp4uO\/\/KjFugm5E=",
-      "bjorkvalle.UI.dll": "sha256-pOZuvTm7gl7m9LlBuxDJA68fDzN5\/ob\/jDlTnQ+dzpM=",
+      "AndreeaNameday2022.dll": "sha256-qYbxKSmpdSFQ\/mriN07Fb60vw2L4JGggYIIGxqREdXI=",
+      "bjorkvalle.UI.dll": "sha256-zbebInNTyhKfB26NKr0rSRMObkCARuGxeMDwJSpVg7A=",
       "Microsoft.AspNetCore.Components.dll": "sha256-VFm\/pMFMBfMhOidkM9RSYxlJFuNjtCwu3iQx3OjXQMs=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-VaNgDptxGzPdJEZny0KA8wdMX4DIZ7ROFGz3BApJ4zk=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-5JHp0TQkrotnkPfOkS3C52rrB5P9tyEZEo0kRLQGOqM=",
