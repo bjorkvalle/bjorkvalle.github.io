@@ -1,7 +1,16 @@
 ﻿@page "/"
 
-<h1>Hello, world!</h1>
-
-<button class="btn">Button</button>
-
-<Button Color="ButtonColor.Primary">Hej</Button>
+<div class="flex flex-col items-center">
+    <Card class="bg-base-100 shadow-xl">
+        <figure class="px-10 pt-10">
+            <img src="./images/dea_nov_nameday_2022.png" alt="Shoes" class="rounded-xl" />
+        </figure>
+        <CardBody>
+            <CardTitle>Shoes!</CardTitle>
+            <Paragraph>If a dog chews shoes whose shoes does he choose?</Paragraph>
+            <CardActions Justify="Justify.End">
+                <a class="btn btn-primary" href="https://ngongbg.se/" target="_blank">Which restaurant?</a>
+            </CardActions>
+        </CardBody>
+    </Card>
+</div>

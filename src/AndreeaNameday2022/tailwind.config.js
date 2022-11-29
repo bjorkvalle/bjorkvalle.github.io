@@ -1,6 +1,12 @@
 module.exports = {
-    content: ['./**/*.{razor,razor.css,html,cshtml}'],
+    content: [
+        './**/*.{razor,razor.css,html,cshtml}',
+        '../bjorkvalle.UI/**/*.{razor,razor.css,html,cshtml}'
+    ],
     theme: {
+        container: {
+            center: true,
+        },
         extend: {
             keyframes: {
                 'fade-in': {
