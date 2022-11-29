@@ -7,6 +7,7 @@
         Between,
         Around,
         Evenly,
-        End
+        End,
+        None
     }
 }
