@@ -1,0 +1,51 @@
+﻿@using System.Reflection
+@using System.Linq.Expressions;
+@using System.ComponentModel.DataAnnotations;
+@typeparam TItem
+@namespace bjorkvalle.UI.Components
+@inherits UIComponentBase
+
+@if (!NoRender)
+{
+    <label @attributes="AdditionalAttributes" class="@ClassNames">
+        @if (ChildContent == null)
+        {
+            <span class="label-text">@label
+                @if (IsRequired)
+                {
+                    <span class="text-error font-bold ml-0.5">*</span>
+                }
+            </span>
+        }
+        else
+        {
+            <span class="label-text">@ChildContent
+                @if (IsRequired)
+                {
+                    <span class="text-error font-bold ml-0.5">*</span>
+                }
+            </span>
+        }
+    </label>
+}
+
+@code {
+    [Parameter] public Expression<Func<TItem>> For { get; set; }
+    [Parameter] public RenderFragment ChildContent { get; set; }
+    [Parameter] public bool IsRequired { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        classBuilder
+            .Begin("label");
+    }
+
+    private string label => GetDisplayName();
+
+    private string GetDisplayName()
+    {
+        var expression = (MemberExpression)For.Body;
+        var value = expression.Member.GetCustomAttribute(typeof(DisplayAttribute)) as DisplayAttribute;
+        return value?.Name ?? expression.Member.Name ?? "";
+    }
+}
