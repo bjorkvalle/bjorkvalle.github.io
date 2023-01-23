@@ -1,6 +1,6 @@
 ﻿@page "/"
 
-@if (key?.Equals(enteredKey, StringComparison.OrdinalIgnoreCase) ?? false)
+@if (!IsValid)
 {
     <input type="text" @bind-value="enteredKey" @bind-value:event="oninput" />
 }
@@ -17,10 +17,15 @@ else
 @code {
     private string key = "gröt", enteredKey;
 
-    protected override void OnInitialized()
+    public bool IsValid
     {
-        #if DEBUG
-            enteredKey = "gröt";
-        #endif
+        get
+        {
+#if DEBUG
+    return true;
+#else
+            return key?.Equals(enteredKey, StringComparison.OrdinalIgnoreCase) ?? false;
+#endif
+        }
     }
 }
