@@ -7,7 +7,7 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "bjorkvalle.client.dll": "sha256-81eOYm5pksVPdWOb6dkTvJ42en9sFahoYC4VeKa5vSE=",
+      "bjorkvalle.client.dll": "sha256-ASFycCmrRg9bNA17UDvBNwoFLExp\/VrEw7BwNPRPItY=",
       "bjorkvalle.infrastructure.dll": "sha256-0XdV5zB+CPgp4PXc6IPfJSAJTAon\/j4qopZ5tbgoRwc=",
       "bjorkvalle.UI.dll": "sha256-cw25gwDR12D01UCTYhudLo+IO3Xf+PwCKnoprwmN5BA=",
       "Microsoft.AspNetCore.Components.dll": "sha256-JorGIsZR1WNKV0t\/AngS3pal4J7WQOWihJFJIYCYXTk=",
