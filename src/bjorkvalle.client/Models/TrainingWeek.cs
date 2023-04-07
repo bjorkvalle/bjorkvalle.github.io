@@ -2,18 +2,19 @@
 {
     public class TrainingWeek
     {
+        [JsonPropertyName("title")]
         public string Title { get; set; }
-        public DateTime EndsOn { get; set; }
-        public Day[] Days { get; set; }
+        //public DateTime EndsOn { get; set; }
+        //public TrainingDay[] Days { get; set; }
     }
 
-    public class Day
+    public class TrainingDay
     {
         public string Title { get; set; }
-        public Block Block { get; set; }
+        public TrainingBlock Block { get; set; }
     }
 
-    public class Block
+    public class TrainingBlock
     {
         public string Title { get; set; }
         public Exercise[] Exercises { get; set; }

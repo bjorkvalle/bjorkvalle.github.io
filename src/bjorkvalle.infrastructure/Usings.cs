@@ -1,7 +1,7 @@
-﻿global using bjorkvalle.infrastructureInfrastructure.Builders;
-global using bjorkvalle.infrastructureInfrastructure.Extensions;
-global using bjorkvalle.infrastructureInfrastructure.Helpers;
-global using bjorkvalle.Infrastructure.Utilities;
+﻿global using bjorkvalle.infrastructure.Builders;
+global using bjorkvalle.infrastructure.Extensions;
+global using bjorkvalle.infrastructure.Helpers;
+global using bjorkvalle.infrastructure.Utilities;
 global using System.Net.Http;
 global using System.Net.Http.Json;
 global using System.Threading;

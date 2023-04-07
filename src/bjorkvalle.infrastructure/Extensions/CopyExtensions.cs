@@ -1,4 +1,4 @@
-﻿namespace bjorkvalle.infrastructureInfrastructure.Extensions
+﻿namespace bjorkvalle.infrastructure.Extensions
 {
     public static class CopyExtensions
     {

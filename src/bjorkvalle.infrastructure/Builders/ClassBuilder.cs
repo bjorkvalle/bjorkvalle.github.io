@@ -1,4 +1,4 @@
-﻿namespace bjorkvalle.infrastructureInfrastructure.Builders
+﻿namespace bjorkvalle.infrastructure.Builders
 {
     public interface IClassBuilder
     {

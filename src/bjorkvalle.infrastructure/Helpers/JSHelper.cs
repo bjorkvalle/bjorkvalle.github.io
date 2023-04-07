@@ -1,4 +1,4 @@
-﻿namespace bjorkvalle.infrastructureInfrastructure.Helpers
+﻿namespace bjorkvalle.infrastructure.Helpers
 {
     public static class JSHelper
     {

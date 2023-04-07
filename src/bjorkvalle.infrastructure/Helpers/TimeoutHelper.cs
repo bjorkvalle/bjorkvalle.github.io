@@ -1,4 +1,4 @@
-﻿namespace WingsBirchwallBlazorStarter.Infrastructure.Helpers
+﻿namespace bjorkvalle.infrastructure.Helpers
 {
     public static class TimeoutHelper
     {

@@ -34,7 +34,22 @@
 @code {
     protected override async Task OnInitializedAsync()
     {
-        var data = Http.GetFromJsonAsync<TrainingWeek[]>("/data/training.json");
-        //data.toco
+        var forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("data/weather.json");
+        forecasts.ToConsole();
+
+
+        var data = await Http.GetFromJsonAsync<TrainingWeek[]>("data/training.json", options: new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+        data.ToConsole();
+    }
+
+    public class WeatherForecast
+    {
+        public DateOnly Date { get; set; }
+
+        public int TemperatureC { get; set; }
+
+        public string? Summary { get; set; }
+
+        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
     }
 }

@@ -15,4 +15,8 @@
 		<ProjectReference Include="..\bjorkvalle.UI\bjorkvalle.UI.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="wwwroot\images\wedding\" />
+	</ItemGroup>
+
 </Project>

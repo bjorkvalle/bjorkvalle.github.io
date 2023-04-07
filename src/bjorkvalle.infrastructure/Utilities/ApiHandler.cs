@@ -1,4 +1,4 @@
-﻿namespace bjorkvalle.Infrastructure.Utilities
+﻿namespace bjorkvalle.infrastructure.Utilities
 {
     public class ApiHandler
     {

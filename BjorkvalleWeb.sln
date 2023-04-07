@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bjorkvalle.UI", "src\bjorkv
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bjorkvalle.client", "src\bjorkvalle.client\bjorkvalle.client.csproj", "{B7ACD5FD-FF0D-4320-B542-238688EB2E64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bjorkvalle.infrastructure", "src\bjorkvalle.infrastructure\bjorkvalle.infrastructure.csproj", "{EB5858EA-A843-45F3-A2CF-D1AEA2FB83DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bjorkvalle.infrastructure", "src\bjorkvalle.infrastructure\bjorkvalle.infrastructure.csproj", "{EB5858EA-A843-45F3-A2CF-D1AEA2FB83DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
