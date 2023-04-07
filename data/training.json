@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Week 1-4",
+    "endsOn": "2023-02-14",
+    "days": [
+      {
+        "title": "Day 1",
+        "block": {
+          "title": "Shoulders and Legs",
+          "exercises": [
+            {
+              "title": "Bulgarian split",
+              "imgUrl": "https://www.styrkelabbet.se/wp-content/uploads/2020/03/Bulgarian-split-squat.gif"
+            }
+          ]
+        }
+      }
+    ]
+  }
+]
