@@ -9,9 +9,9 @@
                     nameof(Keys.Invitation.Title),
                     new Dictionary<string, string>
                     {
-                        { Keys.Languages.Swedish, "Bröllopsinbjudan" },
-                        { Keys.Languages.English, "Wedding invitation" },
-                        { Keys.Languages.Romanian, "Invitatie la cununia civila" }
+                        { Keys.Languages.Swedish, "Bröllopsinbjudan!" },
+                        { Keys.Languages.English, "Wedding invitation!" },
+                        { Keys.Languages.Romanian, "Invitatie la cununia civila!" }
                     }
                 },
                 {
@@ -20,11 +20,11 @@
                     {
                         {
                             Keys.Languages.Swedish,
-                            "Välkomna till en fullspäckad eftermiddag med vigsel, lunch och fika under loppet av några timmar. För den som kan, vågar och orkar så blir det nån slags enklare utgång senare på kvällen. 🥳"
+                            "Välkomna till en fullspäckad eftermiddag med vigsel, lunch och fika under loppet av några timmar.\n\nFör den som kan, vågar och orkar så blir det nån slags enklare utgång senare på kvällen. 🥳"
                         },
                         {
                             Keys.Languages.English,
-                            "Welcome to a packed afternoon with a wedding ceremony, lunch, and coffee within the span of a few hours. For those who are able, willing, and up for it, there will be some kind of casual outing later in the evening. 🥳"
+                            "Welcome to a packed afternoon with a wedding ceremony, lunch, and coffee within the span of a few hours.\n\nFor those who are able, willing, and up for it, there will be some kind of casual outing later in the evening. 🥳"
                         },
                         {
                             Keys.Languages.Romanian,

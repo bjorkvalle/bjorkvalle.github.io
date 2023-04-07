@@ -18,7 +18,7 @@
     protected override void OnParametersSet()
     {
         classBuilder
-            .Begin("card bordered")
+            .Begin("card")
             .AddClass("card-side", condition: Orientation.Equals(Orientation.Horizontal))
             .AddClass("compact", condition: IsCompact);
     }

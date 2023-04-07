@@ -2,58 +2,26 @@
 @inject NavigationManager NavigationManager
 
 <div class="flex flex-col items-center h-screen -m-4 lg:p-4" data-theme="pastel">
-    <Card class="bg-base-100 shadow-2xl swap-off md:w-96">
-        <div class="carousel w-full rounded-t-xl">
-            <div id="slide1" class="carousel-item relative w-full">
-                <img src="./images/wedding/wedding01.jpg" class="object-cover" />
-                <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                    <a href="wedding-2023#slide4" class="btn btn-circle opacity-0 lg:opacity-50" target="_top">❮</a>
-                    <a href="wedding-2023#slide2" class="btn btn-circle opacity-0 lg:opacity-50" target="_top">❯</a>
-                    @*<a href="@($"{NavigationManager.Uri}#slide2")" class="btn btn-circle">❯</a>*@
+    <Card class="bg-base-100 lg:shadow-2xl swap-off md:w-96">
+        <div class="carousel w-full lg:rounded-t-xl max-h-96">
+            <Loop TItem="KeyValuePair<string, string>" Items="imageDict" Context="item">
+                <div @key="item" id="@item.Key" class="carousel-item relative w-full">
+                    <img src="@item.Value" class="object-cover w-full" />
                 </div>
-            </div>
-            <div id="slide2" class="carousel-item relative w-full">
-                <img src="./images/wedding/wedding02.jpg" class="object-cover" />
-                <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                    <a href="wedding-2023#slide1" class="btn btn-circle opacity-0 lg:opacity-50" target="_top">❮</a>
-                    <a href="wedding-2023#slide3" class="btn btn-circle opacity-0 lg:opacity-50" target="_top">❯</a>
-                </div>
-            </div>
-            <div id="slide3" class="carousel-item relative w-full">
-                <img src="./images/wedding/wedding03.jpg" class="object-cover" />
-                <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                    <a href="wedding-2023#slide2" class="btn btn-circle opacity-0 lg:opacity-50" target="_top">❮</a>
-                    <a href="wedding-2023#slide4" class="btn btn-circle opacity-0 lg:opacity-50" target="_top">❯</a>
-                </div>
-            </div>
-            <div id="slide4" class="carousel-item relative w-full">
-                <img src="./images/wedding/wedding04.jpg" class="object-cover" />
-                <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                    <a href="wedding-2023#slide3" class="btn btn-circle opacity-0 lg:opacity-50" target="_top">❮</a>
-                    <a href="wedding-2023#slide1" class="btn btn-circle opacity-0 lg:opacity-50" target="_top">❯</a>
-                </div>
-            </div>
+            </Loop>
         </div>
-        @*<div class="px-10 pt-10">
-            <div class="flex justify-center h-80">
-                <div class="carousel carousel-center rounded-box">
-                    @for (var i = 0; i < 5; i++)
-                    {
-                        <div class="carousel-item">
-                            <img src="https://picsum.photos/340/400" class="rounded-box" />
-                        </div>
-                    }
-                </div>
-            </div>
-        </div>*@
-        @*<img src="./images/gifts/dea_nov_nameday_2022.png" alt="Shoes" class="rounded-xl max-h-80" />*@
+        <div class="flex justify-center w-full pt-3 gap-2">
+            <Loop TItem="KeyValuePair<string, string>" Items="paginationDict" Context="item">
+                <NavLink @key="item" ActiveClass="btn-active" href="@item.Value" class="btn btn-xs" target="_top">@item.Key</NavLink>
+            </Loop>
+        </div>
         <CardBody>
 
             <div class="flex flex-col justify-center items-start md:items-center">
                 <Heading Size="HeadingSize.H1">
                     @Translations.GetValue(Translations.Keys.Invitation.Title, LanguageCode)
                 </Heading>
-                <Paragraph class="text-start md:text-center">
+                <Paragraph class="text-start md:text-center whitespace-pre-line">
                     @Translations.GetValue(Translations.Keys.Invitation.Description, LanguageCode)
                 </Paragraph>
             </div>
@@ -92,6 +60,33 @@
     public string LanguageCode { get; set; }
 
     private Modal modal;
+    private Dictionary<string, string> imageDict = new();
+    private Dictionary<string, string> paginationDict = new();
 
     private void ToggleModal() => modal.Toggle();
+
+    protected override void OnInitialized()
+    {
+        imageDict = new Dictionary<string, string>
+        {
+            { "slide1", "./images/wedding/wedding01.jpg" },
+            { "slide2", "./images/wedding/wedding02.jpg" },
+            { "slide3", "./images/wedding/wedding03.jpg" },
+            { "slide4", "./images/wedding/wedding04.jpg" },
+            { "slide5", "./images/wedding/wedding05.jpg" },
+            { "slide6", "./images/wedding/wedding06.jpg" },
+            { "slide7", "./images/wedding/wedding07.jpg" },
+            { "slide8", "./images/wedding/wedding08.jpg" },
+            { "slide9", "./images/wedding/wedding09.jpg" },
+            { "slide10", "./images/wedding/wedding10.jpg" },
+        };
+
+        paginationDict = imageDict?
+            .Select((x, index) =>
+            {
+                index++;
+                return new KeyValuePair<string, string>(index.ToString(), $"{NavigationManager.PathAndQuery()}#slide{index}");
+            })
+            .ToDictionary(x => x.Key, x => x.Value) ?? new();
+    }
 }

@@ -37,12 +37,12 @@
     {
         classBuilder
             .Begin("text-", ClassProvider.ColorClass(Color), !Color.Equals(Color.None))
-            .AddClass("text-xl mb-4 md:text-3xl font-extrabold", this.Size.Equals(HeadingSize.H1))
-            .AddClass("text-lg mb-3 md:text-2xl font-bold", this.Size.Equals(HeadingSize.H2))
-            .AddClass("text-base mb-2 md:text-lg font-bold", this.Size.Equals(HeadingSize.H3))
-            .AddClass("text-base mb-1 font-bold", this.Size.Equals(HeadingSize.H4))
-            .AddClass("text-sm mb-0.5 md:text-base font-bold", this.Size.Equals(HeadingSize.H5))
-            .AddClass("text-xs md:sm font-bold", this.Size.Equals(HeadingSize.H6))
+            .AddClass("mb-4 text-3xl font-extrabold", this.Size.Equals(HeadingSize.H1))
+            .AddClass("mb-3 text-2xl font-bold", this.Size.Equals(HeadingSize.H2))
+            .AddClass("mb-2 text-lg font-bold", this.Size.Equals(HeadingSize.H3))
+            .AddClass("mb-1 font-bold", this.Size.Equals(HeadingSize.H4))
+            .AddClass("mb-0.5 text-base font-bold", this.Size.Equals(HeadingSize.H5))
+            .AddClass("sm font-bold", this.Size.Equals(HeadingSize.H6))
             ;
     }
 }
