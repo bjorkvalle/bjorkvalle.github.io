@@ -11,7 +11,7 @@
                     {
                         { Keys.Languages.Swedish, "Bröllopsinbjudan!" },
                         { Keys.Languages.English, "Wedding invitation!" },
-                        { Keys.Languages.Romanian, "Invitatie la cununia civila!" }
+                        { Keys.Languages.Romanian, "Invitație la cununia civilă!" }
                     }
                 },
                 {
