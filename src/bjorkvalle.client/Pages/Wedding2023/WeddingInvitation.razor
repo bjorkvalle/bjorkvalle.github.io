@@ -21,15 +21,15 @@
                     @Translations.GetValue(Translations.Keys.Invitation.Title, LanguageCode)
                 </Heading>
                 <Paragraph class="text-start md:text-center whitespace-pre-line">
-                    @Translations.GetValue(Translations.Keys.Invitation.Description, LanguageCode)
+                    @((MarkupString)Translations.GetValue(Translations.Keys.Invitation.Description, LanguageCode))
                 </Paragraph>
             </div>
             <CardActions Justify="Justify.None" class="justify-start md:justify-center mb-4">
                 <Button Color="ButtonColor.None" Clicked="ToggleModal">
-                    @Translations.GetValue(Translations.Keys.Invitation.Schedule, LanguageCode)
+                    @Translations.GetValue(Translations.Keys.Invitation.Buttons.Schedule, LanguageCode)
                 </Button>
                 <a class="btn btn-primary gap-2" href="https://www.lillahanoi.com/" target="_blank">
-                    @Translations.GetValue(Translations.Keys.Invitation.Restaurant, LanguageCode)
+                    @Translations.GetValue(Translations.Keys.Invitation.Buttons.Restaurant, LanguageCode)
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
                         <path fill-rule="evenodd"
                               d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z"
@@ -40,14 +40,28 @@
                     </svg>
                 </a>
             </CardActions>
-            @*<small class="text-accent absolute right-0 bottom-0 p-1">*Endast förslag på restaurang och film</small>*@
         </CardBody>
     </Card>
 
     <Modal @ref="modal" class="modal-bottom sm:modal-middle">
-        <ModalBody class="h-full">
-            <Heading Size="HeadingSize.H2">@Translations.GetValue(Translations.Keys.Invitation.Schedule, LanguageCode)</Heading>
-            <Paragraph>You've been selected for a chance to get one year of subscription to use Wikipedia for free!</Paragraph>
+        <ModalBody class="pt-10 pb-0">
+            <div class="h-full flex flex-col items-center">
+                <Heading Size="HeadingSize.H2" class="mb-5 pb-2 uppercase">@Translations.GetValue(Translations.Keys.Schedule.Title, LanguageCode)</Heading>
+                <div class="flex flex-col gap-3 w-full">
+                    <Loop TItem="ScheduleItem" Items="scheduleItems" Context="item">
+                        <div @key="item" class="flex flex-col items-center bg-base-200 rounded shadow p-2">
+                            <div class="flex justify-start items-center gap-2">
+                                <Heading Size="HeadingSize.H3" class="mb-0 w-24 text-right">@item.When</Heading>
+                                <div class="w-2 h-2 bg-orange-200 rounded-full"></div>
+                                <Heading Size="HeadingSize.H3" class="mb-0 w-24">@item.What</Heading>
+                            </div>
+                            <small><strong>@("@")</strong>@item.Where</small>
+                        </div>
+                    </Loop>
+                </div>
+                <img class="p-8" src="./images/wedding/rings.jpg" />
+            </div>
+            @*<div class="bg-repeat-x h-20 mt-8 -mx-6" style="background-image: url(https://www.naturumgetteron.se/wp-content/themes/naturumgetteron/img/birds-footer.svg)"></div>*@
         </ModalBody>
     </Modal>
 </div>
@@ -61,6 +75,7 @@
     private Modal modal;
     private Dictionary<string, string> imageDict = new();
     private Dictionary<string, string> paginationDict = new();
+    private List<ScheduleItem> scheduleItems = new();
 
     private void ToggleModal() => modal.Toggle();
 
@@ -81,15 +96,70 @@
             { "slide8", "./images/wedding/wedding08.jpg" },
             { "slide9", "./images/wedding/wedding02.jpg" },
             { "slide10", "./images/wedding/wedding10.jpg" },
-            { "slide11", "./images/wedding/wedding11.jpg" },
+            { "slide11", "./images/wedding/wedding11.png" },
         };
 
-        paginationDict = imageDict?
-            .Select((x, index) =>
+        paginationDict =
+            imageDict
+                ?.Select(
+                    (x, index) =>
+                    {
+                        index++;
+                        return new KeyValuePair<string, string>(
+                            index.ToString(),
+                            $"{NavigationManager.PathAndQuery()}#slide{index}"
+                        );
+                    }
+                )
+                .ToDictionary(x => x.Key, x => x.Value) ?? new();
+
+        scheduleItems = new List<ScheduleItem>
+        {
+            new ScheduleItem
             {
-                index++;
-                return new KeyValuePair<string, string>(index.ToString(), $"{NavigationManager.PathAndQuery()}#slide{index}");
-            })
-            .ToDictionary(x => x.Key, x => x.Value) ?? new();
+                When = "☀️ 13:00",
+                What = Translations.GetValue(Translations.Keys.Schedule.Gathering, LanguageCode),
+                Where = Translations.GetValue(Translations.Keys.Schedule.CourthouseSquare, LanguageCode),
+            },
+            new ScheduleItem
+            {
+                When = "☀️ 13:30",
+                What = Translations.GetValue(Translations.Keys.Schedule.Ceremony, LanguageCode),
+                Where = Translations.GetValue(Translations.Keys.Schedule.Courthouse, LanguageCode),
+            },
+            new ScheduleItem
+            {
+                When = "☀️ 14:00",
+                What = Translations.GetValue(Translations.Keys.Schedule.Lunch, LanguageCode),
+                Where = "Lilla Hanoi"
+            },
+            new ScheduleItem
+            {
+                When = "🌓 16:00",
+                What = Translations.GetValue(Translations.Keys.Schedule.Coffee, LanguageCode),
+                Where = Translations.GetValue(Translations.Keys.Schedule.OurPlace, LanguageCode),
+            },
+            new ScheduleItem
+            {
+                When = "🌑 18:00",
+                What = Translations.GetValue(Translations.Keys.Schedule.DinnerActivities, LanguageCode),
+                Where = Translations.GetValue(Translations.Keys.Schedule.OurPlace, LanguageCode),
+            },
+        };
     }
+
+    //protected override void OnAfterRender(bool firstRender)
+    //{
+    //    if (firstRender)
+    //    {
+    //        TimeoutHelper.SetTimeout(
+    //            () =>
+    //            {
+    //                ToggleModal();
+    //                StateHasChanged();
+    //            },
+    //            100
+    //        );
+    //    }
+    //}
 }

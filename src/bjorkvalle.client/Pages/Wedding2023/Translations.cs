@@ -6,7 +6,7 @@
             new()
             {
                 {
-                    nameof(Keys.Invitation.Title),
+                    Keys.Invitation.Title,
                     new Dictionary<string, string>
                     {
                         { Keys.Languages.Swedish, "Bröllopsinbjudan!" },
@@ -15,60 +15,174 @@
                     }
                 },
                 {
-                    nameof(Keys.Invitation.Description),
+                    Keys.Invitation.Description,
                     new Dictionary<string, string>
                     {
                         {
                             Keys.Languages.Swedish,
-                            "Välkomna till en fullspäckad eftermiddag med vigsel, lunch och fika under loppet av några timmar.\n\nFör den som kan, vågar och orkar så blir det nån slags enklare utgång senare på kvällen. 🥳"
+                            """
+                            Välkomna till vår vigsel <strong>i rådhuset i Göteborg den 22 april</strong>. Ceremoni och lunch inom loppet av 1-2 timmar! 😲
+                            
+                            För den som kan, orkar och vill så blir det fika, aktiviteter och enklare middag hemma hos oss på kvällen sen.
+                            🥔🥬🧄🍺🥳
+                            """
                         },
                         {
                             Keys.Languages.English,
-                            "Welcome to a packed afternoon with a wedding ceremony, lunch, and coffee within the span of a few hours.\n\nFor those who are able, willing, and up for it, there will be some kind of casual outing later in the evening. 🥳"
+                            """
+                            Welcome to our wedding <strong>at the courthouse in Gothenburg on April 22nd</strong>. Ceremony and lunch within the span of a few hours! 😲
+                            
+                            For those who are able, willing, and interested, we'll have fika, activities, and some simple dinner at our home in the evening.
+                            🥔🥬🧄🍺🥳
+                            """
                         },
                         {
                             Keys.Languages.Romanian,
-                            "Bun venit la o după-amiază aglomerată cu ceremonia de nuntă, prânzul și cafeaua, toate în decursul câtorva ore. Pentru cei care sunt capabili, dispuși și interesați, mai târziu în seară va avea loc o ieșire într-un mod mai relaxat. 🥳"
+                            """
+                            <strong>Andreea & Eric - 22 aprilie 2023</strong>
+                            
+                            Cu mare bucurie vă invităm să ne fiți alături la cununia noastră civilă. Această zi este una specială pentru noi și suntem încântați să împărtășim acest moment important cu oamenii cei mai apropiați și dragi nouă. 
+                            
+                            Haideți să creem împreună noi amintiri pline de emoție. 🥳
+                            
+                            Familia Björkvall ❤️
+                            """
                         },
                     }
                 },
                 {
-                    nameof(Keys.Invitation.Schedule),
+                    Keys.Invitation.Buttons.Schedule,
                     new Dictionary<string, string>
                     {
-                        { Keys.Languages.Swedish, "Schema" },
+                        { Keys.Languages.Swedish, "Programmet" },
                         { Keys.Languages.English, "Schedule" },
                         { Keys.Languages.Romanian, "Program" },
                     }
                 },
                 {
-                    nameof(Keys.Invitation.Restaurant),
+                    Keys.Invitation.Buttons.Restaurant,
                     new Dictionary<string, string>
                     {
-                        { Keys.Languages.Swedish, "Restaurang" },
+                        { Keys.Languages.Swedish, "Restaurangen" },
                         { Keys.Languages.English, "Restaurant (swe)" },
                         { Keys.Languages.Romanian, "Restaurant (swe)" },
                     }
                 },
+                {
+                    Keys.Schedule.Title,
+                    new Dictionary<string, string>
+                    {
+                        { Keys.Languages.Swedish, "När? Vad? Var?" },
+                        { Keys.Languages.English, "When? What? Where?" },
+                        { Keys.Languages.Romanian, "Unde? Ce? Când?" },
+                    }
+                },
+                {
+                    Keys.Schedule.Gathering,
+                    new Dictionary<string, string>
+                    {
+                        { Keys.Languages.Swedish, "Samling" },
+                        { Keys.Languages.English, "Gathering" },
+                        { Keys.Languages.Romanian, "Întâlnire" },
+                    }
+                },
+                {
+                    Keys.Schedule.Ceremony,
+                    new Dictionary<string, string>
+                    {
+                        { Keys.Languages.Swedish, "Ceremoni" },
+                        { Keys.Languages.English, "Ceremony" },
+                        { Keys.Languages.Romanian, "Ceremonie" },
+                    }
+                },
+                {
+                    Keys.Schedule.Lunch,
+                    new Dictionary<string, string>
+                    {
+                        { Keys.Languages.Swedish, "Lunch" },
+                        { Keys.Languages.English, "Lunch" },
+                        { Keys.Languages.Romanian, "Prânz" },
+                    }
+                },
+                {
+                    Keys.Schedule.Coffee,
+                    new Dictionary<string, string>
+                    {
+                        { Keys.Languages.Swedish, "Fika" },
+                        { Keys.Languages.English, "Fika" },
+                        { Keys.Languages.Romanian, "Fika" },
+                    }
+                },
+                {
+                    Keys.Schedule.Dinner,
+                    new Dictionary<string, string>
+                    {
+                        { Keys.Languages.Swedish, "Middag" },
+                        { Keys.Languages.English, "Dinner" },
+                    }
+                },
+                {
+                    Keys.Schedule.DinnerActivities,
+                    new Dictionary<string, string>
+                    {
+                        { Keys.Languages.Swedish, "Middag + Aktiviteter" },
+                        { Keys.Languages.English, "Dinner + Activities" },
+                        { Keys.Languages.Romanian, "Cină + Activități" },
+                    }
+                },
+                {
+                    Keys.Schedule.Quiz,
+                    new Dictionary<string, string>
+                    {
+                        { Keys.Languages.Swedish, "Quiz" },
+                        { Keys.Languages.English, "Quiz" },
+                        { Keys.Languages.Romanian, "Quiz" },
+                    }
+                },
+                {
+                    Keys.Schedule.AfternoonActivities,
+                    new Dictionary<string, string>
+                    {
+                        { Keys.Languages.Swedish, "Fika, aktiviteter och middag" },
+                        { Keys.Languages.English, "Fika, activities and dinner" },
+                    }
+                },
+                {
+                    Keys.Schedule.Unplanned,
+                    new Dictionary<string, string>
+                    {
+                        { Keys.Languages.Swedish, "Oplanerat" },
+                        { Keys.Languages.English, "Unplanned" },
+                    }
+                },
+                {
+                    Keys.Schedule.Courthouse,
+                    new Dictionary<string, string>
+                    {
+                        { Keys.Languages.Swedish, "Rådhuset" },
+                        { Keys.Languages.English, "Courthouse" },
+                        { Keys.Languages.Romanian, "Primărie" },
+                    }
+                },
+                {
+                    Keys.Schedule.CourthouseSquare,
+                    new Dictionary<string, string>
+                    {
+                        { Keys.Languages.Swedish, "Gustav Adolfs torg" },
+                        { Keys.Languages.English, "Gustav Adolfs torg" },
+                        { Keys.Languages.Romanian, "Piața Gustav Adolf" },
+                    }
+                },
+                {
+                    Keys.Schedule.OurPlace,
+                    new Dictionary<string, string>
+                    {
+                        { Keys.Languages.Swedish, "Hemma hos oss" },
+                        { Keys.Languages.English, "Our place" },
+                        { Keys.Languages.Romanian, "Acasă la noi" },
+                    }
+                },
             };
-
-        public static class Keys
-        {
-            public static class Invitation
-            {
-                public const string Title = nameof(Title);
-                public const string Description = nameof(Description);
-                public const string Schedule = nameof(Schedule);
-                public const string Restaurant = nameof(Restaurant);
-            }
-
-            public static class Languages
-            {
-                public const string Swedish = "se";
-                public const string English = "en";
-                public const string Romanian = "ro";
-            }
-        }
 
         public static string GetValue(string key, string langKey)
         {
@@ -88,6 +202,48 @@
         public static string GetPlaceholder(string key)
         {
             return $"[{key}]";
+        }
+
+        public static class Keys
+        {
+            public static class Invitation
+            {
+                public const string Title = $"{nameof(Invitation)}{nameof(Title)}";
+                public const string Description = $"{nameof(Invitation)}{nameof(Description)}";
+
+                public static class Buttons
+                {
+                    public const string Schedule =
+                        $"{nameof(Invitation)}{nameof(Buttons)}{nameof(Schedule)}";
+                    public const string Restaurant =
+                        $"{nameof(Invitation)}{nameof(Buttons)}{nameof(Restaurant)}";
+                }
+            }
+
+            public static class Schedule
+            {
+                public const string Title = $"{nameof(Schedule)}{nameof(Title)}";
+                public const string Description = $"{nameof(Schedule)}{nameof(Description)}";
+                public const string Gathering = $"{nameof(Schedule)}{nameof(Gathering)}";
+                public const string Ceremony = $"{nameof(Schedule)}{nameof(Ceremony)}";
+                public const string Lunch = $"{nameof(Schedule)}{nameof(Lunch)}";
+                public const string Coffee = $"{nameof(Schedule)}{nameof(Coffee)}";
+                public const string Dinner = $"{nameof(Schedule)}{nameof(Dinner)}";
+                public const string DinnerActivities = $"{nameof(Schedule)}{nameof(DinnerActivities)}";
+                public const string Quiz = $"{nameof(Schedule)}{nameof(Quiz)}";
+                public const string Unplanned = $"{nameof(Schedule)}{nameof(Unplanned)}";
+                public const string AfternoonActivities = $"{nameof(Schedule)}{nameof(AfternoonActivities)}";
+                public const string Courthouse = $"{nameof(Schedule)}{nameof(Courthouse)}";
+                public const string CourthouseSquare = $"{nameof(Schedule)}{nameof(CourthouseSquare)}";
+                public const string OurPlace = $"{nameof(Schedule)}{nameof(OurPlace)}";
+            }
+
+            public static class Languages
+            {
+                public const string Swedish = "se";
+                public const string English = "en";
+                public const string Romanian = "ro";
+            }
         }
     }
 }
