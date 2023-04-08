@@ -43,7 +43,7 @@
                             
                             Cu mare bucurie vă invităm să ne fiți alături la cununia noastră civilă. Această zi este una specială pentru noi și suntem încântați să împărtășim acest moment important cu oamenii cei mai apropiați și dragi nouă. 
                             
-                            Haideți să creem împreună noi amintiri pline de emoție. 🥳
+                            Haideți să creăm împreună noi amintiri pline de emoție. 🥳
                             
                             Familia Björkvall ❤️
                             """
