@@ -6,6 +6,7 @@
 @using Microsoft.JSInterop
 @using bjorkvalle.client
 @using bjorkvalle.client.Models
+@using bjorkvalle.client.Features
 @using bjorkvalle.UI.Components
 @using bjorkvalle.UI.Enums
 @using bjorkvalle.infrastructure.Builders;
@@ -13,3 +14,6 @@
 @using bjorkvalle.infrastructure.Helpers;
 @using bjorkvalle.infrastructure.Utilities;
 @using MediatR;
+@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
