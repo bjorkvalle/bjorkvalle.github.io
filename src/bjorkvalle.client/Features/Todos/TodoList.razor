@@ -1,0 +1,21 @@
+﻿@page "/todos"
+
+@namespace bjorkvalle.client.Features.Todos
+@inject IMediator Mediator
+
+<h3>Todo List</h3>
+
+<ul>
+    <Loop TItem="TodoModel" Items="items" Context="item">
+        <li>(@item.Id)@item.Title - @item.Completed</li>
+    </Loop>
+</ul>
+
+@code {
+    private List<TodoModel> items;
+
+    protected async override Task OnInitializedAsync()
+    {
+        items = await Mediator.Send(new GetTodosQuery());
+    }
+}
