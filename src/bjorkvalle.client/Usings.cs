@@ -5,3 +5,4 @@ global using bjorkvalle.infrastructure.Extensions;
 global using bjorkvalle.infrastructure.Helpers;
 global using bjorkvalle.infrastructure.Utilities;
 global using bjorkvalle.client.Models;
+global using MediatR;
