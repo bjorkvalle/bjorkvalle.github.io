@@ -3,11 +3,14 @@
 @namespace bjorkvalle.client.Features.Todos
 @inject IMediator Mediator
 
-<h3>Todo List</h3>
+<Heading Size="HeadingSize.H1">Todos</Heading>
 
 <ul>
     <Loop TItem="TodoModel" Items="items" Context="item">
-        <li>(@item.Id)@item.Title - @item.Completed</li>
+        <li class="flex gap-2 py-1" title="@item.Id">
+            <span>@item.Title - @item.Completed</span>
+            <Button Clicked="(() => DeleteTodo(item.Id))" Size="ButtonSize.Tiny" Color="ButtonColor.Error">X</Button>
+        </li>
     </Loop>
 </ul>
 
@@ -16,6 +19,12 @@
 
     protected async override Task OnInitializedAsync()
     {
+        items = await Mediator.Send(new GetTodosQuery());
+    }
+
+    private async Task DeleteTodo(int id)
+    {
+        await Mediator.Send(new DeleteTodoCommand(id));
         items = await Mediator.Send(new GetTodosQuery());
     }
 }
