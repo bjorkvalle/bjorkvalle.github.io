@@ -1,8 +1,4 @@
-﻿using bjorkvalle.UI.Components;
-using Microsoft.AspNetCore.Components;
-using System.Xml.Linq;
-
-namespace bjorkvalle.client.Pages.Wedding2023
+﻿namespace bjorkvalle.client.Pages.Wedding2023
 {
     public record ScheduleItem
     {

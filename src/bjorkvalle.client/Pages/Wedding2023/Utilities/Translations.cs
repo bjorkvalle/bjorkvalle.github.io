@@ -220,6 +220,12 @@
                 }
             }
 
+            public static class Album
+            {
+                public const string Title = $"{nameof(Album)}{nameof(Title)}";
+                public const string Description = $"{nameof(Album)}{nameof(Description)}";
+            }
+
             public static class Schedule
             {
                 public const string Title = $"{nameof(Schedule)}{nameof(Title)}";

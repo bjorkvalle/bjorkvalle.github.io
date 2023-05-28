@@ -1,0 +1,167 @@
+﻿@page "/wedding-2023"
+@attribute [AllowAnonymous]
+@layout OpenLayout
+@inject NavigationManager NavigationManager
+
+<div class="flex flex-col items-center h-screen -m-4 lg:p-4" data-theme="pastel">
+    <Card class="bg-base-100 lg:shadow-2xl swap-off lg:w-96">
+        <div class="carousel w-full lg:rounded-t-xl max-h-96">
+            <Loop TItem="KeyValuePair<string, string>" Items="imageDict" Context="item">
+                <div @key="item" id="@item.Key" class="carousel-item relative w-full">
+                    <img src="@item.Value" class="object-cover w-full" />
+                </div>
+            </Loop>
+        </div>
+        <div class="flex justify-center w-full pt-3 gap-2">
+            <Loop TItem="KeyValuePair<string, string>" Items="paginationDict" Context="item">
+                <NavLink @key="item" ActiveClass="btn-active" href="@item.Value" class="btn btn-ghost btn-xs" target="_top">@item.Key</NavLink>
+            </Loop>
+        </div>
+        <CardBody>
+            <div class="flex flex-col justify-center items-start md:items-center">
+                <Heading Size="HeadingSize.H1">
+                    @Translations.GetValue(Translations.Keys.Invitation.Title, LanguageCode)
+                </Heading>
+                <Paragraph class="text-start md:text-center whitespace-pre-line">
+                    @((MarkupString)Translations.GetValue(Translations.Keys.Invitation.Description, LanguageCode))
+                </Paragraph>
+            </div>
+            <CardActions Justify="Justify.None" class="justify-start md:justify-center mb-4">
+                <Button Color="ButtonColor.None" Clicked="ToggleModal">
+                    @Translations.GetValue(Translations.Keys.Invitation.Buttons.Schedule, LanguageCode)
+                </Button>
+                <a class="btn btn-primary gap-2" href="https://www.lillahanoi.com/" target="_blank">
+                    @Translations.GetValue(Translations.Keys.Invitation.Buttons.Restaurant, LanguageCode)
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                        <path fill-rule="evenodd"
+                              d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z"
+                              clip-rule="evenodd" />
+                        <path fill-rule="evenodd"
+                              d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z"
+                              clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </CardActions>
+        </CardBody>
+    </Card>
+
+    <Modal @ref="modal" class="modal-bottom sm:modal-middle">
+        <ModalBody class="pt-10 pb-0">
+            <div class="h-full flex flex-col items-center">
+                <Heading Size="HeadingSize.H2" class="mb-5 pb-2 uppercase">@Translations.GetValue(Translations.Keys.Schedule.Title, LanguageCode)</Heading>
+                <div class="flex flex-col gap-3 w-full">
+                    <Loop TItem="ScheduleItem" Items="scheduleItems" Context="item">
+                        <div @key="item" class="flex flex-col items-center bg-base-200 rounded shadow p-2">
+                            <div class="flex justify-start items-center gap-2">
+                                <Heading Size="HeadingSize.H3" class="mb-0 w-24 text-right">@item.When</Heading>
+                                <div class="w-2 h-2 bg-orange-200 rounded-full"></div>
+                                <Heading Size="HeadingSize.H3" class="mb-0 w-24">@item.What</Heading>
+                            </div>
+                            <small><strong>@("@")</strong>@item.Where</small>
+                        </div>
+                    </Loop>
+                </div>
+                <img class="p-8" src="./images/wedding/rings.jpg" />
+            </div>
+            @*<div class="bg-repeat-x h-20 mt-8 -mx-6" style="background-image: url(https://www.naturumgetteron.se/wp-content/themes/naturumgetteron/img/birds-footer.svg)"></div>*@
+        </ModalBody>
+    </Modal>
+</div>
+
+
+@code {
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "lang")]
+    public string LanguageCode { get; set; }
+
+    private Modal modal;
+    private Dictionary<string, string> imageDict = new();
+    private Dictionary<string, string> paginationDict = new();
+    private List<ScheduleItem> scheduleItems = new();
+
+    private void ToggleModal() => modal.Toggle();
+
+    protected override void OnInitialized()
+    {
+        //if()
+        NavigationManager.NavigateTo($"{NavigationManager.PathAndQuery()}#slide1");
+
+        imageDict = new Dictionary<string, string>
+        {
+            { "slide1", "./images/wedding/invitation/wedding09.jpg" },
+            { "slide2", "./images/wedding/invitation/wedding01.jpg" },
+            { "slide3", "./images/wedding/invitation/wedding03.jpg" },
+            { "slide4", "./images/wedding/invitation/wedding04.jpg" },
+            { "slide5", "./images/wedding/invitation/wedding05.jpg" },
+            { "slide6", "./images/wedding/invitation/wedding06.jpg" },
+            { "slide7", "./images/wedding/invitation/wedding07.jpg" },
+            { "slide8", "./images/wedding/invitation/wedding08.jpg" },
+            { "slide9", "./images/wedding/invitation/wedding02.jpg" },
+            { "slide10", "./images/wedding/invitation/wedding10.jpg" },
+            { "slide11", "./images/wedding/invitation/wedding11.png" },
+        };
+
+        paginationDict =
+            imageDict
+                ?.Select(
+                    (x, index) =>
+                    {
+                        index++;
+                        return new KeyValuePair<string, string>(
+                            index.ToString(),
+                            $"{NavigationManager.PathAndQuery()}#slide{index}"
+                        );
+                    }
+                )
+                .ToDictionary(x => x.Key, x => x.Value) ?? new();
+
+        scheduleItems = new List<ScheduleItem>
+        {
+            new ScheduleItem
+            {
+                When = "☀️ 13:00",
+                What = Translations.GetValue(Translations.Keys.Schedule.Gathering, LanguageCode),
+                Where = Translations.GetValue(Translations.Keys.Schedule.CourthouseSquare, LanguageCode),
+            },
+            new ScheduleItem
+            {
+                When = "☀️ 13:30",
+                What = Translations.GetValue(Translations.Keys.Schedule.Ceremony, LanguageCode),
+                Where = Translations.GetValue(Translations.Keys.Schedule.Courthouse, LanguageCode),
+            },
+            new ScheduleItem
+            {
+                When = "☀️ 14:00",
+                What = Translations.GetValue(Translations.Keys.Schedule.Lunch, LanguageCode),
+                Where = "Lilla Hanoi"
+            },
+            new ScheduleItem
+            {
+                When = "🌓 16:00",
+                What = Translations.GetValue(Translations.Keys.Schedule.Coffee, LanguageCode),
+                Where = Translations.GetValue(Translations.Keys.Schedule.OurPlace, LanguageCode),
+            },
+            new ScheduleItem
+            {
+                When = "🌑 18:00",
+                What = Translations.GetValue(Translations.Keys.Schedule.DinnerActivities, LanguageCode),
+                Where = Translations.GetValue(Translations.Keys.Schedule.OurPlace, LanguageCode),
+            },
+        };
+    }
+
+    //protected override void OnAfterRender(bool firstRender)
+    //{
+    //    if (firstRender)
+    //    {
+    //        TimeoutHelper.SetTimeout(
+    //            () =>
+    //            {
+    //                ToggleModal();
+    //                StateHasChanged();
+    //            },
+    //            100
+    //        );
+    //    }
+    //}
+}
