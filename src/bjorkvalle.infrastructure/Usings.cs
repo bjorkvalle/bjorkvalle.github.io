@@ -1,5 +1,4 @@
-﻿global using bjorkvalle.infrastructure.Builders;
-global using bjorkvalle.infrastructure.Extensions;
+﻿global using bjorkvalle.infrastructure.Extensions;
 global using bjorkvalle.infrastructure.Helpers;
 global using bjorkvalle.infrastructure.Utilities;
 global using System.Net.Http;

@@ -1,4 +1,4 @@
-﻿namespace bjorkvalle.client.Pages.Wedding2023
+﻿namespace bjorkvalle.infrastructure.Utilities
 {
     public static class Translations
     {
