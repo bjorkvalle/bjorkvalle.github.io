@@ -23,9 +23,9 @@
         ? IsOutline.Value
         : !IsCurrent;
 
-    public new ButtonColor Color => !IsCurrent
-        ? ButtonColor.None
-        : !base.Color.Equals(ButtonColor.None)
+    public new Color Color => !IsCurrent
+        ? Color.None
+        : !base.Color.Equals(Color.None)
             ? base.Color
-            : ButtonColor.Secondary;
+            : Color.Secondary;
 }

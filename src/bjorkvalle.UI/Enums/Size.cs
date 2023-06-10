@@ -5,7 +5,6 @@
         Default,
         Tiny,
         Small,
-        Medium,
         Large
     }
 }

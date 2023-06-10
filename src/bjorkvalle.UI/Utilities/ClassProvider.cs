@@ -42,6 +42,7 @@ namespace bjorkvalle.UI.Utilities
             Color.Primary => "primary",
             Color.Secondary => "secondary",
             Color.Accent => "accent",
+            Color.Ghost => "ghost",
             Color.Info => "info",
             Color.Success => "success",
             Color.Warning => "warning",
@@ -91,7 +92,6 @@ namespace bjorkvalle.UI.Utilities
         {
             Size.Tiny => "xs",
             Size.Small => "sm",
-            Size.Medium => "md",
             Size.Large => "lg",
             _ => null
         };
@@ -112,25 +112,18 @@ namespace bjorkvalle.UI.Utilities
             _ => null
         };
 
-        public static string ButtonColorClass(ButtonColor color) => color switch
+        public static string ButtonColorClass(Color color) => color switch
         {
-            ButtonColor.Primary => "primary",
-            ButtonColor.Secondary => "secondary",
-            ButtonColor.Accent => "accent",
-            ButtonColor.Ghost => "ghost",
-            ButtonColor.Link => "link",
-            ButtonColor.Info => "info",
-            ButtonColor.Success => "success",
-            ButtonColor.Warning => "warning",
-            ButtonColor.Error => "error",
-            _ => null
-        };
-
-        public static string ButtonSizeClass(ButtonSize size) => size switch
-        {
-            ButtonSize.Tiny => "xs",
-            ButtonSize.Small => "sm",
-            ButtonSize.Large => "lg",
+            Color.Neutral => "neutral",
+            Color.Primary => "primary",
+            Color.Secondary => "secondary",
+            Color.Accent => "accent",
+            Color.Ghost => "ghost",
+            Color.Link => "link",
+            Color.Info => "info",
+            Color.Success => "success",
+            Color.Warning => "warning",
+            Color.Error => "error",
             _ => null
         };
 

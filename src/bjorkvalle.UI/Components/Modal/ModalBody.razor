@@ -6,7 +6,7 @@
     <div @attributes="AdditionalAttributes" class="@ClassNames">
         @if (IsCloseButtonVisible)
         {
-            <Button Clicked="ModalContainer.Close" Size="ButtonSize.Small" Shape="ButtonShape.Circle" class="absolute right-2 top-2">✕</Button>
+            <Button Clicked="ModalContainer.Close" Size="Size.Small" Shape="ButtonShape.Circle" class="absolute right-2 top-2">✕</Button>
         }
         @ChildContent
     </div>

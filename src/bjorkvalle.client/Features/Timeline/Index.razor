@@ -1,0 +1,23 @@
+﻿@page "/timeline"
+@namespace bjorkvalle.client.Features.Timeline
+
+<div class="flex flex-col items-center h-screen -m-4 p-4" data-theme="bumblebee">
+    <Card class="shadow-lg lg:w-96">
+        <figure><img src="https://picsum.photos/500/700" class="object-cover w-full max-h-96" alt="Shoes" /></figure>
+        <CardBody>
+            <CardTitle>
+                Shoes
+                <Badge Color="Color.Primary">NEW</Badge>
+            </CardTitle>
+            <Paragraph>If a dog chews shoes whose shoes does he choose?</Paragraph>
+            <CardActions Justify="Justify.End">
+                <Button Size="Size.Tiny" Color="Color.Neutral">Fashion</Button>
+                <Button Size="Size.Tiny" Color="Color.Neutral">Products</Button>
+            </CardActions>
+        </CardBody>
+    </Card>
+</div>
+
+@code {
+
+}
