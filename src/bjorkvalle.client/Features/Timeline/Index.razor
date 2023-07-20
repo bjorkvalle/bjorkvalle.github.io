@@ -1,21 +1,46 @@
 ﻿@page "/timeline"
 @namespace bjorkvalle.client.Features.Timeline
 
-<div class="flex flex-col items-center h-screen -m-4 p-4" data-theme="bumblebee">
-    <Card class="shadow-lg lg:w-96">
-        <figure><img src="https://picsum.photos/500/700" class="object-cover w-full max-h-96" alt="Shoes" /></figure>
-        <CardBody>
-            <CardTitle>
-                Shoes
-                <Badge Color="Color.Primary">NEW</Badge>
-            </CardTitle>
-            <Paragraph>If a dog chews shoes whose shoes does he choose?</Paragraph>
-            <CardActions Justify="Justify.End">
-                <Button Size="Size.Tiny" Color="Color.Neutral">Fashion</Button>
-                <Button Size="Size.Tiny" Color="Color.Neutral">Products</Button>
-            </CardActions>
-        </CardBody>
-    </Card>
+<div class="min-h-[calc(100vh-2.5rem)] -m-4" data-theme="light">
+    <div class="flex flex-col p-12">
+        <div class="relative">
+            <div class="absolute h-full left-1/2 border-4 border-base-300 border-dashed"></div>
+            <div class="flex flex-col gap-20 items-center">
+                <a href="timeline/1">
+                    <figure class="z-10 flex flex-col items-center w-56 h-56 overflow-hidden relative rounded-xl shadow-xl">
+                        <img src="https://picsum.photos/400/400">
+                        <figcaption class="absolute glass backdrop-brightness-50 truncate w-full bottom-0 px-3 py-2 text-center">
+                            <Text class="text-slate-300" Size="Size.Tiny" IsBold>
+                                Epic midsummer 2023
+                            </Text>
+                            <br />
+                            <Badge Size="Size.Small" class="glass backdrop-brightness-50 text-slate-300">
+                                2023-06-11
+                            </Badge>
+                        </figcaption>
+                    </figure>
+                </a>
+                @*<Badge Size="Size.Large" Color="Color.Neutral" class="z-10">*@
+                <Badge Size="Size.Large" class="glass backdrop-brightness-50 text-slate-300">
+                    May
+                </Badge>
+                <a href="timeline/1">
+                    <figure class="z-10 flex flex-col items-center w-56 h-56 overflow-hidden relative rounded-xl shadow-xl">
+                        <img src="https://picsum.photos/400/400">
+                        <figcaption class="absolute glass backdrop-brightness-50 truncate w-full bottom-0 px-3 py-2 text-center">
+                            <Text class="text-slate-300" Size="Size.Tiny" IsBold>
+                                First christmas with monkey Mila
+                            </Text>
+                            <br />
+                            <Badge Size="Size.Small" class="glass backdrop-brightness-50 text-slate-300">
+                                2023-05-11
+                            </Badge>
+                        </figcaption>
+                    </figure>
+                </a>
+            </div>
+        </div>
+    </div>
 </div>
 
 @code {

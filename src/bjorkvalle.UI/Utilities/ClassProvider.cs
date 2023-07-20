@@ -40,6 +40,7 @@ namespace bjorkvalle.UI.Utilities
         public static string ColorClass(Color color) => color switch
         {
             Color.Primary => "primary",
+            Color.Neutral => "neutral",
             Color.Secondary => "secondary",
             Color.Accent => "accent",
             Color.Ghost => "ghost",

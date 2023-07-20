@@ -29,6 +29,9 @@ module.exports = {
             animation: {
                 'fade-in': 'fade-in 0.5s ease-out',
                 'fade-out': 'fade-out 0.5s ease-out'
+            },
+            maxWidth: {
+                'xxs': '10rem',
             }
         },
     },
