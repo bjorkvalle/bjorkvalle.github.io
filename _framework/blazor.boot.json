@@ -9,7 +9,7 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "bjorkvalle.client.dll": "sha256-cwXNR7tv0YoECf6v3YxRCnqz2rkPKjmPNqeJactqbFM=",
+      "bjorkvalle.client.dll": "sha256-OaF1OMhd6wFlrF9E3gmHpqnt2WQGUVwYkcwto545hbs=",
       "bjorkvalle.infrastructure.dll": "sha256-Lmn\/LfI6asgmZ3FXs6N2LdPBQlEUIzvp3G9GUVrecI0=",
       "bjorkvalle.UI.dll": "sha256-bzL595WJcPZwAacMqeybdglKd77iceO8yo\/I2SYhTKc=",
       "MediatR.Contracts.dll": "sha256-wmATBKqdFcUaVD4cMwA2jGSsOGM+cne7g1oE9o3famE=",
