@@ -6,6 +6,13 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="wwwroot\images\gifts\NewFolder\**" />
+	  <Content Remove="wwwroot\images\gifts\NewFolder\**" />
+	  <EmbeddedResource Remove="wwwroot\images\gifts\NewFolder\**" />
+	  <None Remove="wwwroot\images\gifts\NewFolder\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="MediatR" Version="12.0.1" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.4" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="7.0.4" />
